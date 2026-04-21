@@ -128,19 +128,21 @@ OPENCODE_GO_MODEL_CAPABILITIES='{
 
 Built-in models:
 
-| Model | Tools | Reasoning | Vision | Max output | Context |
-|---|---|---|---|---|---|
-| `kimi-k2.6` | ✓ | ✓ | ✓ | 65,536 | 262,144 |
-| `kimi-k2.5` | ✓ | ✓ | ✓ | 16,384 | 256,000 |
-| `glm-5.1` | ✓ | ✓ | — | 8,192 | 128,000 |
-| `qwen3.5-plus` | ✓ | ✓ | — | 8,192 | 128,000 |
-| `qwen3.6-plus` | ✓ | ✓ | — | 8,192 | 128,000 |
-| `mimo-v2-pro` | ✓ | ✓ | — | 8,192 | 128,000 |
-| `mimo-v2-omni` | ✓ | ✓ | ✓ | 8,192 | 128,000 |
-| `minimax-m2.5` | ✓ | — | — | 8,192 | 128,000 |
-| `minimax-m2.7` | ✓ | — | — | 8,192 | 128,000 |
+| Model | Tools | Reasoning | Vision |
+|---|---|---|---|
+| `kimi-k2.6` | ✓ | ✓ | ✓ |
+| `kimi-k2.5` | ✓ | ✓ | ✓ |
+| `glm-5.1` | ✓ | ✓ | — |
+| `qwen3.5-plus` | ✓ | ✓ | — |
+| `qwen3.6-plus` | ✓ | ✓ | — |
+| `mimo-v2-pro` | ✓ | ✓ | — |
+| `mimo-v2-omni` | ✓ | ✓ | ✓ |
+| `minimax-m2.5` | ✓ | — | — |
+| `minimax-m2.7` | ✓ | — | — |
 
-Unknown models fall back to conservative defaults (no tools, no reasoning, 8k output, 128k context).
+Only `kimi-k2.6` and `kimi-k2.5` have verified context/output limits in the default map. For other models, token limits are left unspecified and passed through to the upstream provider for enforcement. You can add limits via `OPENCODE_GO_MODEL_CAPABILITIES` if you know them.
+
+Unknown models fall back to conservative defaults (no tools, no reasoning, no vision).
 
 ## Endpoints
 

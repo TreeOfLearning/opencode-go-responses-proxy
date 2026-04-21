@@ -69,8 +69,6 @@ const MODEL_CAPABILITIES = (() => {
       streaming: true,
       vision: false,
       json_mode: true,
-      max_output_tokens: 8192,
-      context_window: 128000,
       supported_params: ["temperature", "top_p", "presence_penalty", "frequency_penalty", "max_tokens", "stop", "seed", "n", "response_format"],
     },
     "qwen3.5-plus": {
@@ -79,8 +77,6 @@ const MODEL_CAPABILITIES = (() => {
       streaming: true,
       vision: false,
       json_mode: true,
-      max_output_tokens: 8192,
-      context_window: 128000,
       supported_params: ["temperature", "top_p", "presence_penalty", "frequency_penalty", "max_tokens", "stop", "seed", "n", "response_format"],
     },
     "qwen3.6-plus": {
@@ -89,8 +85,6 @@ const MODEL_CAPABILITIES = (() => {
       streaming: true,
       vision: false,
       json_mode: true,
-      max_output_tokens: 8192,
-      context_window: 128000,
       supported_params: ["temperature", "top_p", "presence_penalty", "frequency_penalty", "max_tokens", "stop", "seed", "n", "response_format"],
     },
     "mimo-v2-pro": {
@@ -99,8 +93,6 @@ const MODEL_CAPABILITIES = (() => {
       streaming: true,
       vision: false,
       json_mode: true,
-      max_output_tokens: 8192,
-      context_window: 128000,
       supported_params: ["temperature", "top_p", "presence_penalty", "frequency_penalty", "max_tokens", "stop", "seed", "n", "response_format"],
     },
     "mimo-v2-omni": {
@@ -109,8 +101,6 @@ const MODEL_CAPABILITIES = (() => {
       streaming: true,
       vision: true,
       json_mode: true,
-      max_output_tokens: 8192,
-      context_window: 128000,
       supported_params: ["temperature", "top_p", "presence_penalty", "frequency_penalty", "max_tokens", "stop", "seed", "n", "response_format"],
     },
     "minimax-m2.5": {
@@ -119,8 +109,6 @@ const MODEL_CAPABILITIES = (() => {
       streaming: true,
       vision: false,
       json_mode: true,
-      max_output_tokens: 8192,
-      context_window: 128000,
       supported_params: ["temperature", "top_p", "presence_penalty", "frequency_penalty", "max_tokens", "stop", "seed", "n", "response_format"],
     },
     "minimax-m2.7": {
@@ -129,8 +117,6 @@ const MODEL_CAPABILITIES = (() => {
       streaming: true,
       vision: false,
       json_mode: true,
-      max_output_tokens: 8192,
-      context_window: 128000,
       supported_params: ["temperature", "top_p", "presence_penalty", "frequency_penalty", "max_tokens", "stop", "seed", "n", "response_format"],
     },
   };
