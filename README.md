@@ -128,21 +128,25 @@ OPENCODE_GO_MODEL_CAPABILITIES='{
 
 Built-in models:
 
-| Model | Tools | Reasoning | Vision |
-|---|---|---|---|
-| `kimi-k2.6` | ✓ | ✓ | ✓ |
-| `kimi-k2.5` | ✓ | ✓ | ✓ |
-| `glm-5.1` | ✓ | ✓ | — |
-| `qwen3.5-plus` | ✓ | ✓ | — |
-| `qwen3.6-plus` | ✓ | ✓ | — |
-| `mimo-v2-pro` | ✓ | ✓ | — |
-| `mimo-v2-omni` | ✓ | ✓ | ✓ |
-| `minimax-m2.5` | ✓ | — | — |
-| `minimax-m2.7` | ✓ | — | — |
+| Model | Context Window | Max Output | Input $/1M | Output $/1M | Tools | Reasoning | Vision |
+|---|---|---|---|---|---|---|---|
+| `kimi-k2.6` | 262,144 | 65,536 | $0.32 | $1.34 | ✓ | ✓ | ✓ |
+| `kimi-k2.5` | 262,144 | 65,536 | $0.60 | $3.00 | ✓ | ✓ | ✓ |
+| `glm-5` | 204,800 | 131,072 | $1.00 | $3.20 | ✓ | ✓ | — |
+| `glm-5.1` | 204,800 | 131,072 | $1.40 | $4.40 | ✓ | ✓ | — |
+| `qwen3.5-plus` | 262,144 | 65,536 | $0.20 | $1.20 | ✓ | ✓ | ✓ |
+| `qwen3.6-plus` | 262,144 | 65,536 | $0.50 | $3.00 | ✓ | ✓ | ✓ |
+| `mimo-v2-pro` | 1,048,576 | 64,000 | $1.00 | $3.00 | ✓ | ✓ | — |
+| `mimo-v2-omni` | 262,144 | 64,000 | $0.40 | $2.00 | ✓ | ✓ | ✓ |
+| `minimax-m2.5` | 204,800 | 65,536 | $0.30 | $1.20 | ✓ | ✓ | — |
+| `minimax-m2.7` | 204,800 | 131,072 | $0.30 | $1.20 | ✓ | ✓ | — |
 
-Only `kimi-k2.6` and `kimi-k2.5` have verified context/output limits in the default map. For other models, token limits are left unspecified and passed through to the upstream provider for enforcement. You can add limits via `OPENCODE_GO_MODEL_CAPABILITIES` if you know them.
-
-Unknown models fall back to conservative defaults (no tools, no reasoning, no vision).
+**Notes:**
+- Vision support includes image and video input on Kimi and Qwen models; MiMo V2 Omni also supports audio and PDF input.
+- MiMo V2 Pro has experimental over-200K pricing: input $2.00, output $6.00 per 1M tokens.
+- MiMo V2 Omni and MiMo V2 Pro offer `low`, `medium`, and `high` reasoning-effort variants.
+- Token limits are enforced by the proxy's capability map. You can override any model's limits via `OPENCODE_GO_MODEL_CAPABILITIES`.
+- Unknown models fall back to conservative defaults (no tools, no reasoning, no vision).
 
 ## Endpoints
 
